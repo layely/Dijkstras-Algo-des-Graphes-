@@ -9,10 +9,97 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="dijkstras.js"></script>
-        <script src="main.js"></script>
+        <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+        <style>
+            body {
+                width: 800px;
+                height: 600px;
+                border:1px solid #000000;
+                margin: auto;
+            }
+
+            #myCanvas {
+                width: 100%;
+                height: 100%;
+                background-image: url('Regions_du_Senegal.jpg');
+                background-size: 100% 100%;
+            }
+
+            #left {
+                width: 200px;
+                position: fixed;
+                left: 10px;
+            }
+
+            #right {
+                width: 250px;
+                position: fixed;
+                right: 5px;
+            }
+        </style>
     </head>
     <body>
-        <div>TODO write content</div>
+        <div id="left">
+            <form class="entres">
+                <div class="form-group">
+                    <label>Ville source</label>
+                    <select class="selectpicker" id="source">
+                        <option>DAKAR</option>
+                        <option>THIES</option>
+                        <option>LOUGA</option>
+                        <option>DIOURBEL</option>
+                        <option>SEDHIOU</option>
+                        <option>KAFFRINE</option>
+                        <option>SAINT-LOUIS</option>
+                        <option>KAOLACK</option>
+                        <option>FATICK</option>
+                        <option>KEDOUGOU</option>
+                        <option>ZIGUINCHOR</option>
+                        <option>KOLDA</option>
+                        <option>MATAM</option>
+                        <option>TAMBACOUNDA</option>
+                    </select>
+                </div>
+                <hr/>
+                <div class="form-group">
+                    <label>Ville d'arrivée</label>
+                    <select class="selectpicker" id="destination">
+                        <option>DAKAR</option>
+                        <option>THIES</option>
+                        <option>LOUGA</option>
+                        <option>DIOURBEL</option>
+                        <option>SEDHIOU</option>
+                        <option>KAFFRINE</option>
+                        <option>SAINT-LOUIS</option>
+                        <option>KAOLACK</option>
+                        <option>FATICK</option>
+                        <option>KEDOUGOU</option>
+                        <option>ZIGUINCHOR</option>
+                        <option>KOLDA</option>
+                        <option>MATAM</option>
+                        <option>TAMBACOUNDA</option>
+                    </select>
+                </div>
+                <hr/>
+                <button type="submit" class="btn btn-primary">Valider</button>
+            </form> 
+        </div>
+        
+        <div id="right">
+            <h3>Source: </h3>
+            <h2><span id="labelSource"></span></h2>
+            <h3>Destination: </h3>
+            <h2><span id="labelDestination"></span></h2>
+            <h3>Distance : </h3>
+            <h1><span id="distance"></span></h1>
+        </div>
+        <canvas id="myCanvas">
+        </canvas>
+        
+        <script src="jquery-3.2.1.min.js"></script>
+        <script src="dijkstras.js"></script>
+        <script src="draw.js"></script>
+        <script src="main.js"></script>
+        <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     </body>
 </html>
